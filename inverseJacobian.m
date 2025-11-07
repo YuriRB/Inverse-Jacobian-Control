@@ -209,7 +209,7 @@ while true
     % Pseudo-inversa com amortecimento
     % Calcula a velocidade das juntas desejada para atingir aceleração aX, usando a pseudo-inversa do Jacobiano com amortecimento (damped least squares).
     % Amortecimento evita problemas de singularidade do Jacobiano e melhora estabilidade numérica.
-    % Pseudo-inversa permite mapear velocidades do espaço operacional para velocidades articulares, mesmo para sistemas redundantes ou próximos de singularidades.
+    % PseudSo-inversa permite mapear velocidades do espaço operacional para velocidades articulares, mesmo para sistemas redundantes ou próximos de singularidades.
      J_damp = (J')*pinv(J*(J') + (lambda.^2).*eye(3));
      dtheta_d = J_damp*aX;
 
