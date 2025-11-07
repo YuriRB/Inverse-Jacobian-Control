@@ -158,11 +158,6 @@ while true
         deltaX = Xd - X;
         dX = J*dtheta;
         delta_dX = -dX;
-
-        aX = Kp*deltaX + Kd*delta_dX;
-    
-        J_damp = (J')*pinv(J*(J') + (lambda.^2).*eye(3));
-        dtheta_d = J_damp*aX;
     
         h = -m2.*l1.*l2.*sin(theta(2));
         C = [h.*dtheta(2), h.*sum(dtheta(1:2)), 0; ...
@@ -261,5 +256,6 @@ while true
             '\n'], tMaxSegmento);
     end
 end
+
 
 fprintf('Fim da simulação.\n');
